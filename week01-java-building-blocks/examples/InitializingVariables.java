@@ -36,6 +36,11 @@ public class InitializingVariables {
 		Instance and class variables do not require you to initialize them.
 
 		 */
+
+        /*Introduction Var 
+        Var can be initialized just to Instance and class variables. Apart from that, onece initialized var type can't be
+        altered anymore
+        */ 
 	}
 
 }
