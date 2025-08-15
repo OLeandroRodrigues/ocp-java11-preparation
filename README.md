@@ -26,11 +26,13 @@ This repository contains my study plan and hands-on exercises to prepare for the
 
 ocp-java11-preparation/  
 
-├── week01-types-operators/  
+├── week01-java-building-blocks/  
 
-├── week02-methods-arrays/  
+├── week02-types-operators/  
 
-├── week03-object-oriented-programming/  
+├── week03-methods-arrays/  
+
+├── week04-object-oriented-programming/  
 
 ├── ...  
 
