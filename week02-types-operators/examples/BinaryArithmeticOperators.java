@@ -28,6 +28,13 @@ public class BinaryArithmeticOperators {
 		int blueJay = (9 + 2) + 3) / (2 * 4; // DOES NOT COMPILE
 		short robin = 3 + [(4 * 2) + 4]; // DOES NOT COMPILE
 		[] it doesn't work*/
+
+        /*The modulus operation is not limited to positive integer values in Java; it
+        may also be applied to negative integers and floating-point numbers. For
+        example, if the divisor is 5, then the modulus value of a negative number is
+        between -4 and 0 . For the exam, though, you are not required to be able to
+        take the modulus of a negative integer or a floating-point number.*/
+
 	}
 
 }
