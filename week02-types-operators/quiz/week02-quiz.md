@@ -21,3 +21,7 @@ What is the data type of w * x / y?
 /*08-20-2025 - BEGIN*/
 Today I only did practice tests. Overall, I did very well on them, but the questions I got wrong were related to casting, so I need to study this topic more carefully and do more exercises until I feel fully comfortable with the level of questions on this subject.
 /*08-20-2025 - END*/
+
+/*08-23-2025 - BEGIN*/
+Today only did practice tests. (Enthware Test Studio)
+/*08-23-2025 - END*/
