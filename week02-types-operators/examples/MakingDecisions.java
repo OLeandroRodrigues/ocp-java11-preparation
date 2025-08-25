@@ -82,6 +82,104 @@ public class MakingDecisions {
 		variable must be marked with the final modifier and initialized with a literal value in
 		the same expression in which it is declared.*/
 		//SWITCH - END
+		
+		/*WRITING WHILE LOOPS - BEGIN*/
+		MakingDecisions.WritingWhileLoops.Samples();
+		/*WRITING WHILE LOOPS - END*/
+		
+		/*WRITING FOR LOOPS - BEGIN*/
+		MakingDecisions.ForLoops.Samples();
+		/*WRITING FOR LOOPS - END*/
 	}
-
+	
+	public class WritingWhileLoops{
+		
+		public WritingWhileLoops() {}
+		
+		public static void Samples() {
+			
+			System.out.println("WRITING WHILE LOOPS");
+			System.out.println("Sample 1");
+			// Sample 1 
+			int counter = 0;
+			while (counter < 10) {
+				double price = counter * 10;
+				System.out.println(price);
+				counter++;
+			}
+			
+		}
+	}
+		
+	public class ForLoops{
+		
+			/*For the exam, you are going to have to know how to read forward and
+				backward for loops. When you see a for loop on the exam, pay close
+				attention to the loop variable and operations if the decrement operator, -- ,
+				is used. While incrementing from 0 in a for loop is often straightforward,
+				decrementing tends to be less intuitive. In fact, if you do see a for loop
+				with a decrement operator on the exam, you should assume they are trying
+				to test your knowledge of loop operations.*/
+		
+			public ForLoops() {}
+			
+			public static void Samples() {
+				
+				System.out.println("WRITING FOR LOOPS");
+				System.out.println("Sample 1");
+				// Sample 1 
+				for(int i = 0; i < 5; i++) {
+					System.out.print(i + " ");
+				}
+				
+				System.out.println("Sample 2");
+				// Sample 2
+				int x = 0;
+				for(long y = 0, z = 4, w = 5; x < 5 && y < 10; x++, y++, z++) {
+					System.out.print(y + " "); 
+				}
+				System.out.print(x + " ");
+			}
+			
+			/*You should familiarize yourself with
+			the following five examples; variations of these are likely to be seen on the exam.*/
+			
+			/*
+			 * 	1. Creating an Infinite Loop
+					for( ; ; )
+						System.out.println("Hello World");
+						
+			  	2. Adding Multiple Terms to the for Statement
+					int x = 0;
+					for(long y = 0, z = 4; x < 5 && y < 10; x++, y++) {
+						System.out.print(y + " "); 
+					}
+					System.out.print(x + " ");
+					
+				3. Redeclaring a Variable in the Initialization Block
+					int x = 0;
+					for(int x = 4; x < 5; x++) { // DOES NOT COMPILE
+						System.out.print(x + " ");
+					}
+					
+				4. Using Incompatible Data Types in the Initialization Block
+					int x = 0;
+					for(long y = 0, int z = 4; x < 5; x++) { // DOES NOT COMPILE
+					System.out.print(y + " ");
+					}
+					
+					variables must have same type!
+					
+				5. Using Loop Variables Outside the Loop
+					for(long y = 0, x = 4; x < 5 && y < 10; x++, y++) {
+						System.out.print(y + " ");
+					}
+					System.out.print(x); // DOES NOT COMPILE
+			  */
+			
+			
+		}
 }
+
+
+
