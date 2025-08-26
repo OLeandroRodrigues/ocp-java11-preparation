@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*Notes 
  Using Operators and Decision Constructs
  
@@ -90,6 +93,15 @@ public class MakingDecisions {
 		/*WRITING FOR LOOPS - BEGIN*/
 		MakingDecisions.ForLoops.Samples();
 		/*WRITING FOR LOOPS - END*/
+		
+		/*WRITING FOR EACH LOOPS - BEGIN*/
+		MakingDecisions.WritingForEachLoops.Samples();
+		/*WRITING FOR EACH LOOPS - END*/
+		
+		/*CONTROLLING FLOW WITH BRANCHING - BEGIN*/
+		MakingDecisions.ControllingFlowWithBranching.Samples();
+		/*CONTROLLING FLOW WITH BRANCHING- END*/
+		
 	}
 	
 	public class WritingWhileLoops{
@@ -176,8 +188,57 @@ public class MakingDecisions {
 					}
 					System.out.print(x); // DOES NOT COMPILE
 			  */
+		}
+	
+		public class WritingForEachLoops{
+				
+				public WritingForEachLoops() {}
+				
+				public static void Samples() {
+					
+					System.out.println("WRITING FOR EACH LOOPS");
+					System.out.println("Sample 1");
+					// Sample 1 
+					
+					List<String> values = new ArrayList<String>();
+					values.add("Lisa");
+					values.add("Kevin");
+					values.add("Roger");
+					for(var value : values) {
+						System.out.print(value + ", ");
+					}
+					
+				}
+			}
+		
+		public class ControllingFlowWithBranching{
 			
+			public ControllingFlowWithBranching() {}
 			
+			public static void Samples() {
+				
+				System.out.println("CONTROLLING FLOW WITH BRANCHING");
+				System.out.println("Sample 1");
+				// Sample 1 
+				int[][] myComplexArray = {{5,2,1,3},{3,9,8,9},{5,7,12,7}};
+				for(int[] mySimpleArray : myComplexArray) {
+					for(int i=0; i<mySimpleArray.length; i++) {
+							System.out.print(mySimpleArray[i]+"\t");
+					}
+					System.out.println();
+				}
+				
+				// Sample 2 
+				int hungryHippopotamus = 8;
+				while(hungryHippopotamus>0) {
+					do {
+						hungryHippopotamus -= 2;
+					} while (hungryHippopotamus>5);
+					hungryHippopotamus--;
+					System.out.print(hungryHippopotamus+", ");
+				}
+				
+			}
 		}
 }
 
