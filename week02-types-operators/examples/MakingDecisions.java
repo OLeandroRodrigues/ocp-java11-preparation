@@ -5,6 +5,12 @@ import java.util.List;
  Using Operators and Decision Constructs
  
  The structure of an if statement runtime
+
+  -> UNREACHABLE CODE
+	One facet of break, continue, and return that you should be aware of is that any code
+	placed immediately after them in the same block is considered unreachable and will not
+	compile (DOES NOT COMPILE!).
+    
  */
 
 public class MakingDecisions {
