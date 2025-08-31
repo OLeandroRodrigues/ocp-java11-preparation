@@ -26,6 +26,12 @@ public class CreatingAndManipulatingString {
 		/*STRING MAIN METHODS- BEGIN*/
 		CreatingAndManipulatingString.StringMethods.Samples();
 		/*STRING MAIN METHODS- BEGIN*/
+		
+		/*STRINGBUILDER - BEGIN*/
+		CreatingAndManipulatingString.UsingStringBuilder.Samples();
+		/*STRINGBUILDER - END*/
+		
+
 	}
 	
 	class Concatenation{
@@ -93,9 +99,9 @@ public class CreatingAndManipulatingString {
 				System.out.println(string.substring(3, 7)); // mals
 				
 				//The next examples are less obvious:
-				System.out.println(string.substring(3, 3)); // empty string
+				/*System.out.println(string.substring(3, 3)); // empty string
 				System.out.println(string.substring(3, 2)); // throws exception because the indexes can’t be backward.
-				System.out.println(string.substring(3, 8)); // throws exception because there is no eighth position
+				System.out.println(string.substring(3, 8)); // throws exception because there is no eighth position*/
 				
 				//toLowerCase() and toUpperCase()
 				/*The method signatures are as follows:
@@ -169,6 +175,108 @@ public class CreatingAndManipulatingString {
 				/*	The intern() method returns the value from the string pool if it is there. Otherwise, it
 					adds the value to the string pool.*/
 			}	
+			
+		  }
+        
+		
+		class UsingStringBuilder {
+			
+			public UsingStringBuilder(){}
+			
+			public static void Samples(){
+				
+				// Sample 1
+				//Mutability and Chaining
+				
+				StringBuilder sb = new StringBuilder("start");
+				sb.append("+middle"); // sb = "start+middle"
+				StringBuilder same = sb.append("+end"); // "start+middle+end"
+				
+				StringBuilder a = new StringBuilder("abc");
+				StringBuilder b = a.append("de");
+				b = b.append("f").append("g");
+				System.out.println("a=" + a);
+				System.out.println("b=" + b);
+				// result abcdefg for sure :) 
+				
+				//Creating a StringBuilder
+				StringBuilder sb1 = new StringBuilder();
+				StringBuilder sb2 = new StringBuilder("animal");
+				StringBuilder sb3 = new StringBuilder(10); // reserve a certain capacity, or number of
+				//slots, for characters.
+				
+				//Important StringBuilder Methods
+				
+				//charAt(), indexOf(), length(), and substring()
+				//These four methods work exactly the same as in the String class.
+				StringBuilder sb10 = new StringBuilder("animals");
+				String sub = sb10.substring(sb10.indexOf("a"), sb10.indexOf("al"));
+				int len = sb10.length();
+				char ch = sb10.charAt(6);
+				System.out.println(sub + " " + len + " " + ch);
+				
+				//append()
+				/*The append() method is by far the most frequently used method in StringBuilder.
+				It adds the parameter to the StringBuilder and returns a reference
+				to the current StringBuilder*/
+				/*One of the method signatures is as follows:
+				StringBuilder append(String str)*/
+				StringBuilder sb20 = new StringBuilder().append(1).append('c');
+				sb20.append("-").append(true);
+				System.out.println(sb20); // 1c-true
+				
+				//insert()
+				/*
+				 	The insert() method adds characters to the StringBuilder at the requested index and
+					returns a reference to the current StringBuilder. Just like append(), there are lots of
+					method signatures for different types. Here’s one:
+					StringBuilder insert(int offset, String str)
+				 */
+				StringBuilder sb30 = new StringBuilder("animals");
+				sb30.insert(7, "-"); // sb30 = animals-
+				sb30.insert(0, "-"); // sb30 = -animals-
+				sb30.insert(4, "-"); // sb30 = -ani-mals-
+				System.out.println(sb30);
+				
+				//delete() and deleteCharAt()
+				//The delete() method is the opposite of the insert() method.
+				/*The method signatures
+				are as follows:
+				StringBuilder delete(int startIndex, int endIndex)
+				StringBuilder deleteCharAt(int index)*/
+				StringBuilder sb40 = new StringBuilder("abcdef");
+				sb40.delete(1, 3); // sb40 = adef
+				//sb40.deleteCharAt(5); // throws an exception
+				/*If you specify a second parameter that is past the end of the StringBuilder, Java will just
+				assume you meant the end. That means this code is legal:*/
+				StringBuilder sb41 = new StringBuilder("abcdef");
+				sb41.delete(1, 100); // sb41 = a
+				
+				//replace()
+				/*
+				The replace() method works differently for StringBuilder than it did for String. The
+				method signature is as follows:
+					StringBuilder replace(int startIndex, int endIndex, String newString)*/
+				StringBuilder builder = new StringBuilder("pigeon dirty");
+				builder.replace(3, 6, "sty");
+				System.out.println(builder); // pigsty dirty
+				
+				//reverse()
+				/*The method signature is as follows:
+					StringBuilder reverse()*/
+				StringBuilder sb42 = new StringBuilder("ABC");
+				sb42.reverse();
+				System.out.println(sb42); // CBA
+				
+				//toString()
+				/*The last method converts a StringBuilder into a String. 
+				The method signature is as follows:
+					String toString()*/
+				StringBuilder sb43 = new StringBuilder("ABC");
+				String s = sb43.toString();
+			}
 		}
+			
 	}
+
 
