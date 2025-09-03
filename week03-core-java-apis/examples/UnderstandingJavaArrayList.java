@@ -1,3 +1,5 @@
+package week03_core_java_apis;
+
 import java.util.Arrays; // import just Arrays
 
 public class UnderstandingJavaArrays {
