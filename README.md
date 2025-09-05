@@ -1,6 +1,6 @@
 # OCP Java SE 11 Preparation
 
-This repository contains my study plan and hands-on exercises to prepare for the **OCP Java SE 11 (Oracle Certified Professional)** certification. My goal is to deeply understand the exam topics and apply the concepts through real-world examples.
+This repository contains my study plan and hands-on exercises to prepare for the **1Z0-819 : OCP Java SE 11 (Oracle Certified Professional)** certification. My goal is to deeply understand the exam topics and apply the concepts through real-world examples.
 
 ---
 
@@ -29,7 +29,7 @@ ocp-java11-preparation/
 ├── week01-java-building-blocks/  
 ├── week02-types-operators/  
 ├── week03-core-java-apis/  
-├── week04-object-oriented-programming/  
+├── week04-lambdas-and-functional-interfaces/  
 ├── ...  
 └── week22-final-mock-exam/ 
 ```
