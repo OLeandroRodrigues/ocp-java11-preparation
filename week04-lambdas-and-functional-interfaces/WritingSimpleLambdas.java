@@ -1,5 +1,6 @@
 
 import java.util.*;
+import java.util.function.*;
 
 public class WritingSimpleLambdas {
 
@@ -28,12 +29,33 @@ public class WritingSimpleLambdas {
 		print(animals, a -> a.canSwim());
 		print(animals, a -> ! a.canSwim());
 		
+		//Lambda Syntax
+		//a -> a.canHop();
+		
+		/*Table 6.1 shows examples of valid lambdas that return a boolean .*/
+		
+		/*tabLe 6.1 										Valid lambdas
+		Lambda 											# parameters
+		() -> true 										0
+		a -> a.startsWith("test") 						1
+		(String a) -> a.startsWith("test") 				1
+		(a, b) -> a.startsWith("test") 					2
+		(String a, String b) -> a.startsWith("test") 	2*/
+		
+		/*tabLe 6. 2 											Invalid lambdas that return boolean
+		Invalid lambda 										Reason
+		a, b -> a.startsWith("test") 						Missing parentheses
+		a -> { a.startsWith("test"); } 						Missing return
+		a -> { return a.startsWith("test") } 				Missing semicolon*/
+		
+		//Remember that the parentheses are optional only when there is one parameter and it
+		//doesn’t have a type declared.
 	}
 	private static void print(List<Animal> animals,CheckTrait checker) {
 		
 		for (Animal animal : animals) {
 			// the general check
-			if (checker.test(animal))
+			if (checker.test(animal))	
 				System.out.print(animal + " ");
 			}
 			System.out.println();
@@ -64,6 +86,26 @@ public class WritingSimpleLambdas {
 	public interface CheckTrait {
 		boolean test(Animal a);
 	}
+	
+	public class PredicateSearch {
+		
+		public static void main(String[] args) {
+			
+			List<Animal> animals = new ArrayList<Animal>();
+			animals.add(new Animal("fish", false, true));
+			print(animals, a -> a.canHop());
+		}
+		
+		private static void print(List<Animal> animals,Predicate<Animal> checker) {
+			
+			for (Animal animal : animals) {
+				if (checker.test(animal))
+					System.out.print(animal + " ");
+			}
+			
+			System.out.println();
+			}
+		}
 }
 
 
