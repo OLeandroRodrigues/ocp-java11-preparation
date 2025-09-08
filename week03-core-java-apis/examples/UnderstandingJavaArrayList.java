@@ -1,4 +1,3 @@
-package week03_core_java_apis;
 
 /*
  Notes
