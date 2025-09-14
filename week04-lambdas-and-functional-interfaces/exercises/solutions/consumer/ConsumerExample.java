@@ -62,6 +62,17 @@ public class ConsumerExample {
 		// consumer implemented manually
 		print(users.get(0).name,users.get(0).email,consumerUser);
 		
+		/*5. Logging Actions
+		- Create a list of integers.
+		- Use a Consumer<Integer> that prints each number multiplied by 2 and logs "Value processed".
+		- Hint: you can combine two consumers with .andThen().*/
+		
+		List<Integer> numbers1 = List.of(1, 2, 3, 4, 5);
+        Consumer<Integer> multiply = n -> System.out.println("Result: " + (n * 2));
+        Consumer<Integer> log = n -> System.out.println("Value processed");
+        Consumer<Integer> combined1 = multiply.andThen(log);
+        numbers1.forEach(combined1);
+		
 	}
 
 	static class User {
