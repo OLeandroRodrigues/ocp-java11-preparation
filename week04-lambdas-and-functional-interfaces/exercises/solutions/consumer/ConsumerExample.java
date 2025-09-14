@@ -72,6 +72,25 @@ public class ConsumerExample {
         Consumer<Integer> log = n -> System.out.println("Value processed");
         Consumer<Integer> combined1 = multiply.andThen(log);
         numbers1.forEach(combined1);
+        
+        /*6. Bonus: Error Handling
+        - Create a Consumer<String> that tries to parse the string into an integer and prints the result.
+        - If parsing fails (e.g. "abc"), catch the exception and print "Invalid number".*/
+
+        Consumer<String> safeParser = s -> {
+            try {
+                int num = Integer.parseInt(s);
+                System.out.println("Parsed number: " + num);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid number: " + s);
+            }
+        };
+
+        // Testing
+        safeParser.accept("42");   // Parsed number: 42
+        safeParser.accept("100");  // Parsed number: 100
+        safeParser.accept("abc");  // Invalid number: abc
+        
 		
 	}
 

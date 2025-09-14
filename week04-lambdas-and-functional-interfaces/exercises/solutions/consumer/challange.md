@@ -39,6 +39,7 @@ Tasks
 6. Bonus: Error Handling
 - Create a Consumer<String> that tries to parse the string into an integer and prints the result.
 - If parsing fails (e.g. "abc"), catch the exception and print "Invalid number".
+  OK - DONE
 
 Goal
 After completing this challenge you should:
