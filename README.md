@@ -30,6 +30,7 @@ ocp-java11-preparation/
 ├── week02-types-operators/  
 ├── week03-core-java-apis/  
 ├── week04-lambdas-and-functional-interfaces/  
+├── week05-methods-and-encapsulation/  
 ├── ...  
 └── week22-final-mock-exam/ 
 ```
