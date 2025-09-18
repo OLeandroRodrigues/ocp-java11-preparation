@@ -9,5 +9,7 @@
 	<classpathentry kind="src" path="week04-lambdas-and-functional-interfaces"/>
 	<classpathentry kind="src" path="week02-types-operators/examples"/>
 	<classpathentry kind="src" path="week03-core-java-apis/examples"/>
+	<classpathentry kind="src" path="hands-on"/>
+	<classpathentry kind="src" path="week05-methods-and-encapsulation"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
