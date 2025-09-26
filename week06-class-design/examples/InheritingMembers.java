@@ -48,6 +48,77 @@ public class InheritingMembers {
 		will help you with questions about whether the code will compile.*/
 		
 		/*#Overriding a Generic Method*/
+		/*Overriding methods is complicated enough, but add generics to it and things only get more
+		challenging*/
+		
+		/*We cannot overload methods by changing the generic type
+		due to type erasure*/
+		
+		/*public class LongTailAnimal {
+			protected void chew(List<Object> input) {}
+			protected void chew(List<Double> input) {} // DOES NOT COMPILE
+			}*/
+		
+		//For the same reason, you also can’t overload a generic method in a parent class.
+		
+		/*public class LongTailAnimal {
+			protected void chew(List<Object> input) {}
+			}
+			public class Anteater extends LongTailAnimal {
+			protected void chew(List<Double> input) {} // DOES NOT COMPILE
+			}*/
+		
+		//#Generic Method Parameters
+		//On the other hand, you can override a method with generic parameters, but you must
+		//match the signature including the generic type exactly.
+		
+		/*public class LongTailAnimal {
+			protected void chew(List<String> input) {}
+			}
+		public class Anteater extends LongTailAnimal {
+			protected void chew(List<String> input) {}
+			}*/
+		
+		//#Generic Return Types
+		/*
+		 	When you’re working with overridden methods that return generics, the return values must
+			be covariant. In terms of generics, this means that the return type of the class or interface
+			declared in the overriding method must be a subtype of the class defined in the parent class.
+*/
+		/*
+		 	public class Mammal {
+				public List<CharSequence> play() { ... }
+				public CharSequence sleep() { ... }
+			}
+			public class Monkey extends Mammal {
+				public ArrayList<CharSequence> play() { ... }
+			}
+			public class Goat extends Mammal {
+				public List<String> play() { ... } // DOES NOT COMPILE
+				public String sleep() { ... }
+			} 
+		 
+		 */
+		
+		//#Redeclaring private Methods
+		
+		//Java permits you to redeclare a new method in the child class with the same or modified
+		//signature as the method in the parent class
+		
+		//#Hiding Static Methods
+		
+		/*A hidden method occurs when a child class defines a static method with the same name
+		and signature as an inherited static method defined in a parent class.*/
+		
+		//#Creating final Methods
+		//By marking a method final, you forbid a child class from replacing this method.
+		
+		//#Hiding Variables
+		/*A hidden variable occurs when a child class defines a variable with the same name as an
+		inherited variable defined in the parent class. This creates two distinct copies of the variable
+		within an instance of the child class: one instance defined in the parent class and one
+		defined in the child class.*/
+		
 
 	}
 	
