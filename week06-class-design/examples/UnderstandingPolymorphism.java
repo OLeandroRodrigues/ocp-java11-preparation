@@ -62,6 +62,87 @@ public class UnderstandingPolymorphism {
 		System.out.println(lemur2.age);
 		Lemur lemur3 = (Lemur)primate; // Explicit Cast
 		System.out.println(lemur3.age);*/
+		
+		//#The instanceof Operator
+		//to prevent ClassCastExceptions at runtime.
+		/*performs the cast only if the instanceof operator returns true:
+		if(rodent instanceof Capybara) {
+			Capybara capybara = (Capybara)rodent;
+		}*/
+		
+		//#Polymorphism and Method Overriding
+		
+		/*class Penguin {
+			public int getHeight() { return 3; }
+			public void printInfo() {
+				System.out.print(this.getHeight());
+			}
+		}
+		
+		public class EmperorPenguin extends Penguin {
+			public int getHeight() { return 8; }
+			public static void main(String []fish) {
+				new EmperorPenguin().printInfo();
+			}
+		}*/
+		//If you said 8, then you are well on your way to understanding polymorphism.
+		/*The facet of polymorphism that replaces methods via overriding is one of the most
+		important properties in all of Java.*/
+		
+		/*#Overriding vs. Hiding Members*/
+		/*class Penguin {
+			public static int getHeight() { return 3; }
+			public void printInfo() {
+				System.out.println(this.getHeight());
+			}
+		}
+		public class CrestedPenguin extends Penguin {
+			public static int getHeight() { return 8; }
+			public static void main(String... fish) {
+				new CrestedPenguin().printInfo();
+			}
+		}*/
+		/*The CrestedPenguin example is nearly identical to our previous EmporerPenguin example,
+		although as you probably already guessed, it prints 3 instead of 8.*/
+		//Let’s try a more complex example:
+		/*class Marsupial {
+			protected int age = 2;
+			public static boolean isBiped() {
+				return false;
+			}
+		}
+		
+		public class Kangaroo extends Marsupial {
+			protected int age = 6;
+			public static boolean isBiped() {
+				return true;
+			}
+			public static void main(String[] args) {
+				Kangaroo joey = new Kangaroo();
+				Marsupial moey = joey;
+				System.out.println(joey.isBiped());
+				System.out.println(moey.isBiped());
+				System.out.println(joey.age);
+				System.out.println(moey.age);
+			}
+		}*/
+		/*
+		 	The program prints the following:
+			true
+			false
+			6
+			2
+		*/
+		/*
+		 	Remember, in this example, only one object, of type Kangaroo, is created and stored in
+			memory. Since static methods can only be hidden, not overridden, Java uses the reference
+			type to determine which version of isBiped() should be called, resulting in joey.isBiped()
+			printing true and moey.isBiped() printing false.
+			Likewise, the age variable is hidden, not overridden, so the reference type is used to determine
+			which value to output. This results in joey.age returning 6 and moey.age returning 2
+		*/
+		
+		
 
 	}
 
