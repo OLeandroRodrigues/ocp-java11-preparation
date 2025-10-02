@@ -80,6 +80,92 @@ public class ImplementingInterfaces {
 		*/
 		
 		//#Inheriting an Interface
+		//An interface can be inherited in one of three ways.
+		/*
+		-> An interface can extend another interface.
+		-> A class can implement an interface.
+		-> A class can extend another class whose ancestor implements an interface.
+		*/
+		
+		//abstract class that implements an interface:
+		/*public interface HasTail {
+			public int getTailLength();
+		}
+		public interface HasWhiskers {
+				public int getNumberOfWhiskers();
+		}
+		public abstract class HarborSeal implements HasTail, HasWhiskers {}
+		public class CommonSeal extends HarborSeal { // DOES NOT COMPILE }*/
+			
+		/*The HarborSeal class is not required to implement any of the abstract methods it inherits
+		from the HasTail and HasWhiskers because it is marked abstract. The concrete class
+		CommonSeal, which extends HarborSeal, is required to implement all inherited abstract
+		methods. In this example, CommonSeal doesn’t provide an implementation for the inherited
+		abstract interface methods, so CommonSeal doesn’t compile.*/
+		
+		//#Mixing Class and Interface Keywords
+		/*public interface CanRun {}
+		public class Cheetah extends CanRun {} // DOES NOT COMPILE
+		public class Hyena {}
+		public interface HasFur extends Hyena {} // DOES NOT COMPILE*/
+		
+		//#Duplicate Interface Method Declarations
+		/*
+		public interface Herbivore {
+			public void eatPlants();
+			}
+		public interface Omnivore {
+			public void eatPlants();
+			public void eatMeat();
+		}
+		In this scenario, the signatures for the two interface methods eatPlants() are duplicates.
+		As they have identical method declarations, they are also considered compatible
+		
+		No errors
+
+
+		But 
+		interface Dances {
+			int countMoves();
+		}
+		interface EatsFish {
+			boolean countMoves();
+		}
+		public class Penguin implements Dances, EatsFish { // DOES NOT COMPILE
+			...
+		}
+		
+		Since it is not possible to define a version of countMoves() that returns both int and
+		boolean, there is no implementation of the Penguin that will allow this declaration to compile
+
+		with abstract class we have the same behaviour above
+		*/
+		
+		//#Polymorphism and Interfaces
+		
+		//#Abstract Reference Types
+		/*When working with abstract types, you may prefer to work with the abstract reference
+		types, rather than the concrete class. This is especially common when defining method
+		parameters. Consider the following implementation:*/
+		
+		/*
+		import java.util.*;
+		public class Zoo {
+			public void sortAndPrintZooAnimals(List<String> animals) {
+				Collections.sort(animals);
+				for(String a : animals) {
+					System.out.println(a);
+				}
+			}
+		}*/
+		
+		//#Casting Interfaces
+		/*Let’s say you have an abstract reference type variable, which has been instantiated by a
+		concrete subclass. If you need access to a method that is only declared in the concrete subclass,
+		then you will need to cast the interface reference to that type, assuming the cast is
+		supported at runtime*/
+		
+		//#Interfaces and the instanceof Operator
 
 	}
 
