@@ -32,6 +32,7 @@ ocp-java11-preparation/
 ├── week04-lambdas-and-functional-interfaces/  
 ├── week05-methods-and-encapsulation/  
 ├── week06-class-design/  
+├── week07-exceptions/  
 ├── ...  
 └── week22-final-mock-exam/ 
 ```
