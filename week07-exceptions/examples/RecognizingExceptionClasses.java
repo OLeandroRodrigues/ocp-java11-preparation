@@ -32,6 +32,29 @@ public class RecognizingExceptionClasses {
 			attempt is made to convert a string to a numeric type but the string doesn’t have an appropriate
 			format
 			
+			#Checked Exception Classes
+			
+			Checked exceptions have Exception in their hierarchy but not RuntimeException. They
+			must be handled or declared. Common checked exceptions include the following:
+				-> IOException
+				-> FileNotFoundException
+				
+			#Error Classes
+			Errors are unchecked exceptions that extend the Error class. They are thrown by the JVM
+			and should not be handled or declared. Errors are rare, but you might see these:
+				-> ExceptionInInitializerError
+				-> StackOverflowError
+				-> NoClassDefFoundError
+			
+			ExceptionInInitializerError: Java runs static initializers the first time a class is used. If one of the static initializers
+				throws an exception, Java can’t start using the class
+			StackOverflowError: When Java calls methods, it puts parameters and local variables on the stack. After
+				doing this a very large number of times, the stack runs out of room and overflows
+				Most of the time, this error occurs when a method calls itself. :D
+			NoClassDefFoundError
+				A NoClassDefFoundError occurs when Java can’t find the class at runtime. Generally, this
+				means a library available when the code was compiled is not available when the code is
+				executed.
 			
 
 		*/
