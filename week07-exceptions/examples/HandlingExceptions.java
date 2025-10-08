@@ -111,6 +111,86 @@ public class HandlingExceptions {
 		//finally block
 		
 		//#Throwing Additional Exceptions
+		/*26: try {
+		27: 	throw new RuntimeException();
+		28: } catch (RuntimeException e) {
+		29: 	throw new RuntimeException();
+		30: } finally {
+		31: 	throw new Exception();
+		32: }*/
+		
+		/*Next we are going to show you one of the hardest examples you can be asked related to
+		exceptions. What do you think this method returns? Go slowly. It’s tricky.*/
+		/*30: public String exceptions() {
+		31: StringBuilder result = new StringBuilder();
+		32: String v = null;
+		33: try {
+		34: 	try {
+		35: 		result.append("before_");
+		36: 		v.length();
+		37: 		result.append("after_");
+		38: 	} catch (NullPointerException e) {
+		39: 		result.append("catch_");
+		40: 		throw new RuntimeException();
+		41: 	} finally {
+		42: 		result.append("finally_");
+		43: 		throw new Exception();
+		44: 	}
+		45: } catch (Exception e) {
+		46: 	result.append("done");
+		47: }
+		48: return result.toString();
+		49: }*/
+		
+		// before_catch_finally_done :D
+		
+		//#Calling Methods That Throw Exceptions
+		/*When you see a checked exception declared inside a catch block on the
+		exam, check and make sure the code in the associated try block is capable
+		of throwing the exception or a subclass of the exception. If not, the code
+		is unreachable and does not compile. Remember that this rule does not
+		extend to unchecked exceptions or exceptions declared in a method
+		signature.*/
+		
+		//#Declaring and Overriding Methods with Exceptions
+		/*When a class overrides a method from a superclass
+		or implements a method from an interface, it’s not allowed to add new checked exceptions
+		to the method signature. For example, this code isn’t allowed:
+		
+		class CanNotHopException extends Exception { }
+		class Hopper {
+		public void hop() { }
+		}
+		class Bunny extends Hopper {
+		public void hop() throws CanNotHopException { } // DOES NOT COMPILE
+		}*/
+		
+		/*An overridden method in a subclass is allowed to declare fewer exceptions than the
+		superclass or interface. This is legal because callers are already handling them.*/
+		
+		/*class Hopper {
+			public void hop() throws CanNotHopException { }
+			}
+			class Bunny extends Hopper {
+			public void hop() { }
+		 }*/
+			
+		//#Printing an Exception
+		/*There are three ways to print an exception. You can let Java print it out, print just the message,
+		or print where the stack trace comes from. This example shows all three approaches:*/
+		
+		/*5: public static void main(String[] args) {
+		6: try {
+		7: hop();
+		8: } catch (Exception e) {
+		9: System.out.println(e);
+		10: System.out.println(e.getMessage());
+		11: e.printStackTrace();
+		12: }
+		13: }
+		14: private static void hop() {
+		15: throw new RuntimeException("cannot hop");
+		16: }*/
 
 	}
 
