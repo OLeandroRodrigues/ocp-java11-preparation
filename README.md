@@ -33,6 +33,7 @@ ocp-java11-preparation/
 ├── week05-methods-and-encapsulation/  
 ├── week06-class-design/  
 ├── week07-exceptions/  
+├── week08-modules/  
 ├── ...  
 └── week22-final-mock-exam/ 
 ```
